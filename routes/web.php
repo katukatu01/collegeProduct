@@ -13,7 +13,6 @@
 Route::get('/', 'MusicController@index');
 Route::get('/musics/create', 'MusicController@create');
 Route::get('/musics/{music}', 'MusicController@show');
-//Route::get('/musics/{post}/edit', 'MusicController@edit');
+Route::get('/musics/{music}/edit', 'MusicController@edit');
 Route::post('/musics', 'MusicController@store');
-//Route::put('/posts/{post}', 'MusicController@update');
-//Route::get('/posts', 'MusicController@index');
+Route::put('/musics/{music}', 'MusicController@update');

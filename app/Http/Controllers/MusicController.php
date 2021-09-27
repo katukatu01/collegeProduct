@@ -26,4 +26,16 @@ class MusicController extends Controller
         $music->fill($input)->save();
         return redirect('/musics/' . $music->id);
     }
+    
+    public function edit(Music $music)
+    {
+        return view('edit')->with(['music' => $music]);
+    }
+    
+    public function update(MusicRequest $request, Music $music)
+    {
+        $input_music = $request['music'];
+        $music->fill($input_music)->save();
+        return redirect('/musics/' . $music->id);
+    }
 }
